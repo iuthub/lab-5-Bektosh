@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link rel="stylesheet" type="text/css" href="un.css">
+		<title>Buy Your Way to a Better Education!</title>
+		<link href="buyagrade.css" type="text/css" rel="stylesheet" />
+	</head>
+	
+	<body>
+		<h1>Buy Your Way to a Better Education!</h1>
+
+		<p>
+			The rough economy, along with recent changes in University of Washington policy, now allow us to offer grades for money.  That's right!  All you need to get a 4.0 in this course is cold, hard, cash.
+		</p>
+		
+		<?php if($_SERVER["REQUEST_METHOD"]=="GET") { ?>
+      
+      <form action="index.php" method="post" enctype="multipart/form-data">
+      	<center>
+      <h1>Give us your Money</h1>
+      </center>
+        <fieldset>
+          <table>
+            <tr>
+              <td>Student name</td>
+              <dd>
+              	<?=$_POST['name']>
+              </dd>
+              <dd>
+              <section name="Section">
+              	<dd>
+              	<?=$_POST['Section']>
+              </dd>
+              	<option value="MA"></option>
+              	<option volue="VI"></option>
+              	
+              </section>
+              </dd>
+              <td><input type="text" name="n"></td>
+            </tr>
+            <tr>
+              <td>Section Number</td>
+              <td>
+                  <select name="numOfResults[]" multiple="">
+                    <optgroup label="Sections">
+                      <?php for($i=1;$i<5;$i++) { ?>
+                         <option value="<?= $i ?>"><?= $i ?></option>
+                      <?php } ?>
+                    </optgroup>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Choose Card type</td>
+              <dd>
+              	<?=$_POST['cardnumber']> <?=$_POST['cardtype']>
+              </dd>
+              <td>
+              <label>
+                <input type="radio" name="searchType" value="MasterCard"> Master Card
+              </label>
+              <label>
+                <input type="radio" name="searchType" value="VisaCard" checked=""> Visa Card
+              </label>
+              <label>
+                <input type="radio" name="searchType" value="UZCard"> UZ Card
+              </label>
+              </td>
+            </tr>
+              <td>&nbsp;</td>
+              <td>
+                <input type="submit" value="I am a giant sucker">
+                <div>
+                	
+                </div>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+
+<?php }
+			
+		
+	</body>
+</html>
